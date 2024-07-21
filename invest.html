@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest Now - GoldenLeap</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset and Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d134d;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(to right, #0d134d, #1a237e);
+            padding: 60px 0;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .header p {
+            color: #e5b541;
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+
+        /* Main Content Section */
+        .main-content {
+            padding: 40px 15px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+            flex: 1;
+        }
+
+        .main-content h2 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            color: #dcdcdc;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .main-content .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+            padding: 20px;
+            border: 3px solid #e5b541; /* Gold border */
+            border-radius: 10px;
+            background-color: #1a237e;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-content .feature {
+            background-color: #0d134d;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            color: white;
+            border: 2px solid #e5b541; /* Gold border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-content .feature i {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #e5b541;
+        }
+
+        .main-content .feature h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .main-content .feature p {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        /* Sign-up Section */
+        .signup-section {
+            background-color: #1a237e;
+            padding: 40px 20px;
+            text-align: justify;
+            margin: 20px auto;
+            border-radius: 10px;
+            color: white;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .signup-section h3 {
+            color: #e5b541;
+            margin-bottom: 20px;
+        }
+
+        .signup-section p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        .signup-section ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 20px 0;
+        }
+
+        .signup-section li {
+            margin-bottom: 10px;
+        }
+
+        .signup-section .btn {
+            /* background-color: #e5b541; */
+            background:linear-gradient(to right, #ffffff, #f1bb3d);
+            color: #0d134d;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .signup-section .btn:hover {
+            background-color: #caa533;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #0d134d;
+            color: white;
+            padding: 40px 15px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer p {
+            margin: 10px 0;
+        }
+
+        .footer a {
+            color: #e5b541;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .footer-links li {
+            display: inline;
+        }
+
+        .social-media {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-icon {
+            color: gold;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            color: #fff;
+        }
+
+        .copy-right {
+            margin-top: 20px;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .signup-section {
+                float: none;
+                width: auto;
+                margin: 20px auto;
+            }
+
+            .investment-section {
+                margin-left: 0;
+            }
+
+            .main-content .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    
+    <style>
+
+        .navbar {
+            background-color: #000;
+            overflow: hidden;
+            /* padding: 10px 0; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            padding: 5px 10px;
+        }
+        .navbar .logo {
+            /* display: flex; */
+            /* align-items: center; */
+            padding: 0 20px;
+        }
+        .navbar .logo img {
+            border-radius: 40px;
+            margin-right: 10px;
+        }
+        .navbar .logo span {
+            color: #ffffff;
+            /* font-weight: bold; */
+        }
+        /* .navbar .logo small {
+            display: block;
+            font-size: 12px;
+            color: #f9d500;
+        } */
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar .nav-links li {
+            margin: 0 10px;
+        }
+        .navbar .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            color: #fff;
+        }
+        .navbar .search-box {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            padding: 0 20px;
+        }
+        .navbar .search-box input {
+            padding: 5px 10px;
+            border: 2px solid #f9d500;
+            border-radius: 20px 0 0 20px;
+            outline: none;
+            color: #f9d500;
+            background-color: #000;
+        }
+        .navbar .search-box button {
+            padding: 5px 15px;
+            border: 2px solid #f9d500;
+            border-radius: 0 20px 20px 0;
+            background-color: #000;
+            color: #f9d500;
+            cursor: pointer;
+        }
+        .navbar .search-box button:hover {
+            background-color: #f9d500;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="/goldenleap/assets/agoldenleap_logo.png" alt="Logo" width="160" height="50" style="padding-left: 300px;">
+            
+        </div>
+        
+        
+    </div>
+    <div class="navbar" style="background-color: #0d134d;">
+        <ul class="nav-links" style="padding-left: 300px;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Our Philosophy</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Vision</a></li>
+            <li><a href="#">Invest</a></li>
+            <li><a href="#">Join now</a></li>
+            <li><a href="#">Offerings</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button>SEARCH</button>
+        </div>
+    </div>
+
+    <header class="header">
+        <h1>Invest Now with GoldenLeap</h1>
+        <p>Empowering your investment journey with innovative solutions</p>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <p>
+            At GoldenLeap, we offer cutting-edge investment solutions designed to help you achieve financial success with confidence. Our comprehensive analysis, innovative tools, and dedicated support are tailored to meet your unique investment needs. Here’s why investing with us is a smart choice:
+        </p>
+
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-search-dollar"></i>
+                <h3>Comprehensive Market Analysis</h3>
+                <p>We provide in-depth analysis of market trends to help you make informed investment decisions.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-tools"></i>
+                <h3>Innovative Investment Tools</h3>
+                <p>Our advanced tools and platforms ensure you have the best resources for managing your investments.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-user-shield"></i>
+                <h3>Dedicated Support</h3>
+                <p>Our team of experts is always available to assist you and provide personalized guidance.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-chart-line"></i>
+                <h3>Proven Track Record</h3>
+                <p>We have a history of successful investments and a reputation for reliability and performance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sign-up Section -->
+    <section class="signup-section">
+        <h3>Sign-up for GoldenLeap's PMS</h3>
+        <p>Sign-up for GoldenLeap’s PMS digitally using your Aadhar. It’s fast, easy with no paperwork.</p>
+        <p>You will need:</p>
+        <ul>
+            <li>Copy of PAN card</li>
+            <li>Copy of Aadhar Card (front and back)</li>
+            <li>Copy of cancelled cheque</li>
+            <li>Photo of your signature on plain paper</li>
+            <li>Device with camera to capture live photo</li>
+        </ul>
+        <a href="#" class="btn">Get Started</a>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <!-- Purpose Statement -->
+        <div class="footer-purpose">
+            <p>At GoldenLeap, our purpose is to make wealth creation simple and 
+                accessible by being trustworthy and transparent capital allocators. 
+                We strive to offer innovative investment solutions and dedicated support to help you achieve your
+                 financial goals with confidence and clarity.</p>
+            <p>Please reach out to us at:</p>
+            <p>Board Line: 999-999-9999</p>
+            <p>Sales Desk: 888-888-8888</p>
+            <p>Email: <a href="mailto:info@agoldenleap.com">info@agoldenleap.com</a></p>
+        </div>
+        
+        <!-- Quick Links Section -->
+        <div class="footer-widget">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Invest With Us</a></li>
+                <li><a href="#">Corporate Disclosures</a></li>
+                <li><a href="#">Investing Books</a></li>
+                <li><a href="#">FAQ'S</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Newsletters</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Follow Us Section -->
+        <div class="footer-widget">
+            <h4>Follow Us</h4>
+            <div class="social-media">
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        
+        <!-- Footer Bottom Section -->
+        <div class="copy-right">
+            <p>&copy; 2024 GoldenLeap Markets. All rights reserved. <a href="#">Privacy Policy</a></p>
+            <p>Support Email: <a href="mailto:support@agoldenleap.com">support@agoldenleap.com</a></p>
+        </div>
+    </footer>
+</body>
+
+    
+</body>
+</html>

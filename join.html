@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Now - GoldenLeap</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #00274d; /* Dark blue background */
+            color: #ffffff; /* White text */
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #004080; /* Slightly lighter blue for header */
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ffd700; /* Gold bottom border */
+        }
+
+        .quotes {
+            margin: 20px 0;
+        }
+
+        .quotes h2 {
+            border-bottom: 2px solid #ffd700; /* Gold underline for section headings */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        .quote-slider {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 250px;
+        }
+
+        .quote-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .quote-slide img {
+            border-radius: 50%;
+            margin-bottom: 10px;
+            width: 100px; /* Adjust image size as needed */
+            height: 100px; /* Adjust image size as needed */
+        }
+
+        .quote-slide p {
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .quote-slide.active {
+            opacity: 1;
+        }
+
+        .features {
+            margin: 20px 0;
+            overflow: hidden; /* Hide overflow for smooth animation */
+        }
+
+        .features h2 {
+            border-bottom: 2px solid #ffd700; /* Gold underline for section headings */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .features-wrapper {
+            display: flex;
+            animation: move-left-right 30s linear infinite; /* Slower animation for moving features */
+        }
+
+        @keyframes move-left-right {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .features-grid {
+            display: flex;
+            gap: 20px;
+            min-width: 100%;
+        }
+
+        .feature-item {
+            background-color: #003366; /* Even darker blue for feature items */
+            padding: 20px;
+            border-radius: 15px;
+            border: 2px solid #ffffff; /* White border around feature items */
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            width: 300px; /* Fixed width for consistent layout */
+        }
+
+        .feature-item:hover {
+            transform: scale(1.05);
+            background-color: #004080; /* Slightly lighter blue on hover */
+        }
+
+        .feature-item h3 {
+            margin-top: 0;
+            color: #ffd700; /* Gold color for headings */
+        }
+
+        .join-now {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .join-now button {
+            background-color: #ffd700; /* Gold background for button */
+            color: #00274d; /* Dark blue text */
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .join-now button:hover {
+            background-color: #e5c100; /* Slightly darker gold on hover */
+            transform: scale(1.05);
+        }
+    </style>
+
+    
+    <!-- header styles-->
+    <style>
+
+        .navbar {
+            background-color: #000;
+            overflow: hidden;
+            /* padding: 10px 0; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #000;
+            padding: 5px 10px;
+        }
+        .navbar .logo {
+            /* display: flex; */
+            /* align-items: center; */
+            padding: 0 20px;
+        }
+        .navbar .logo img {
+            border-radius: 40px;
+            margin-right: 10px;
+        }
+        .navbar .logo span {
+            color: #ffffff;
+            /* font-weight: bold; */
+        }
+        /* .navbar .logo small {
+            display: block;
+            font-size: 12px;
+            color: #f9d500;
+        } */
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar .nav-links li {
+            margin: 0 10px;
+        }
+        .navbar .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: color 0.3s;
+        }
+        .navbar .nav-links a:hover {
+            color: #fff;
+        }
+        .navbar .search-box {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            padding: 0 20px;
+        }
+        .navbar .search-box input {
+            padding: 5px 10px;
+            border: 2px solid #f9d500;
+            border-radius: 20px 0 0 20px;
+            outline: none;
+            color: #f9d500;
+            background-color: #000;
+        }
+        .navbar .search-box button {
+            padding: 5px 15px;
+            border: 2px solid #f9d500;
+            border-radius: 0 20px 20px 0;
+            background-color: #000;
+            color: #f9d500;
+            cursor: pointer;
+        }
+        .navbar .search-box button:hover {
+            background-color: #f9d500;
+            color: #000;
+        }
+    </style>
+    
+    <!-- footer styles -->
+    
+    <style>
+    
+    
+        /* Footer Section */
+        .footer {
+            background-color: #0d134d;
+            color: white;
+            padding: 40px 15px;
+            text-align: center;
+            margin-top: auto;
+        }
+    
+        .footer p {
+            margin: 10px 0;
+        }
+    
+        .footer a {
+            color: #e5b541;
+            text-decoration: none;
+        }
+    
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+    
+        .footer-links li {
+            display: inline;
+        }
+    
+        .social-media {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+    
+        .social-icon {
+            color: gold;
+            /* background-color: red; */
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+    
+        .social-icon:hover {
+            color: #fff;
+        }
+    
+        .copy-right {
+            margin-top: 20px;
+        }
+    
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .signup-section {
+                float: none;
+                width: auto;
+                margin: 20px auto;
+            }
+    
+            .investment-section {
+                margin-left: 0;
+            }
+    
+            .main-content .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="/goldenleap/assets/agoldenleap_logo.png" alt="Logo" width="160" height="50" style="padding-left: 300px;">
+            
+        </div>
+        
+        
+    </div>
+    <div class="navbar" style="background-color: #0d134d;">
+        <ul class="nav-links" style="padding-left: 300px;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Our Philosophy</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Vision</a></li>
+            <li><a href="#">Invest</a></li>
+            <li><a href="#">Join now</a></li>
+            <li><a href="#">Offerings</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button>SEARCH</button>
+        </div>
+    </div>
+    <div class="container">
+        <header class="header">
+            <h1>Join Now</h1>
+        </header>
+        <section class="quotes">
+            <h2>At GoldenLeap, we simplify wealth creation with transparency and reliability. Our innovative investment solutions and 
+                dedicated support are designed to help you achieve your financial goals with confidence.</h2>
+            <div class="quote-slider">
+                Slides will be dynamically added here
+            </div>
+        </section>
+        <section class="features">
+            <h2>Salient Features of Our Investment</h2>
+            <div class="features-wrapper">
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <h3>Comprehensive Market Analysis</h3>
+                        <p>Get in-depth insights and analysis to make informed investment decisions.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Expert Portfolio Management</h3>
+                        <p>Our experienced managers handle your investments for maximum returns.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Real-time Trading Insights</h3>
+                        <p>Stay ahead with up-to-date information and trading tips.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Secure and Transparent Transactions</h3>
+                        <p>Ensuring your investments are handled with the highest security and transparency.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Personalized Investment Strategies</h3>
+                        <p>Tailored strategies to meet your specific financial goals.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="join-now">
+            <button>Join Now</button>
+        </div>
+    </div>
+         <!-- Footer Section -->
+         <footer class="footer">
+            <!-- Purpose Statement -->
+            <div class="footer-purpose">
+                <p>At GoldenLeap, our purpose is to make wealth creation simple and 
+                    accessible by being trustworthy and transparent capital allocators. 
+                    We strive to offer innovative investment solutions and dedicated support to help you achieve your
+                     financial goals with confidence and clarity.</p>
+                <p>Please reach out to us at:</p>
+                <p>Board Line: 999-999-9999</p>
+                <p>Sales Desk: 888-888-8888</p>
+                <p>Email: <a href="mailto:info@agoldenleap.com">info@agoldenleap.com</a></p>
+            </div>
+            
+            <!-- Quick Links Section -->
+            <div class="footer-widget">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Invest With Us</a></li>
+                    <li><a href="#">Corporate Disclosures</a></li>
+                    <li><a href="#">Investing Books</a></li>
+                    <li><a href="#">FAQ'S</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Newsletters</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Follow Us Section -->
+            <div class="footer-widget">
+                <h4>Follow Us</h4>
+                <div class="social-media">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Section -->
+            <div class="copy-right">
+                <p>&copy; 2024 GoldenLeap Markets. All rights reserved. <a href="#">Privacy Policy</a></p>
+                <p>Support Email: <a href="mailto:support@agoldenleap.com">support@agoldenleap.com</a></p>
+            </div>
+        </footer>
+    <script>
+        // Define quotes and image URLs
+        const quotes = [
+    {
+        text: '"The stock market is filled with individuals who know the price of everything, but the value of nothing." - Philip Fisher',
+        img: '/macbook/Desktop/gold/market.jpg'
+    },
+    {
+        text: '"In investing, what is comfortable is rarely profitable." - Robert Arnott',
+        img: '/macbook/Desktop/gold/Business or Career Development.jpg'
+    },
+    {
+        text: '"An investment in knowledge pays the best interest." - Benjamin Franklin',
+        img: '/macbook/Desktop/gold/comfortable.jpg'
+    },
+    {
+        text: '"The best investment you can make is in yourself." - Warren Buffett',
+        img: '/macbook/Desktop/gold/different.jpg'
+    }
+];
+        const quoteSlider = document.querySelector('.quote-slider');
+
+        // Function to add slides to the slider
+        function addSlides() {
+            quotes.forEach((quote) => {
+                const slide = document.createElement('div');
+                slide.classList.add('quote-slide');
+                
+                const img = document.createElement('img');
+                img.src = quote.img;
+                img.alt = quote.text.split(' - ')[1];
+                slide.appendChild(img);
+                
+                const p = document.createElement('p');
+                p.textContent = quote.text;
+                slide.appendChild(p);
+                
+                quoteSlider.appendChild(slide);
+            });
+        }
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.quote-slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000); // Change slide every 3 seconds
+
+        document.addEventListener('DOMContentLoaded', () => {
+            addSlides();
+            showSlide(currentSlide);
+        });
+    </script>
+</body>
+</html>
