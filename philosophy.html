@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Philosophy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Reset and Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d134d;
+            color: white;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(to right, #0d134d, #1a237e);
+            padding: 60px 0;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .header p {
+            color: #e5b541;
+            font-size: 1.2em;
+            margin: 10px 0 0;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 40px 15px;
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .main-content h2 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .main-content p {
+            color: #dcdcdc;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .main-content .btn {
+            background-color: #e5b541;
+            color: #0d134d;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .main-content .btn:hover {
+            background-color: #caa533;
+        }
+
+        /* Sections */
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            border: 1px solid #e5b541;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            animation: slideIn 2s ease-in-out;
+        }
+
+        .section img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            color: #e5b541;
+            margin-bottom: 15px;
+        }
+
+        .section p {
+            color: #dcdcdc;
+            text-align: left;
+            font-size: 1em;
+        }
+
+        .section i {
+            color: #e5b541;
+            margin-right: 10px;
+        }
+
+        /* Cards Styles */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            transition: transform 0.3s ease-in-out;
+            text-align: center; /* Center align content */
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card i {
+            font-size: 2em;
+            color: #e5b541; /* Gold color for icons */
+            margin-bottom: 15px;
+        }
+
+        .card h4 {
+            color: #0d134d; /* Dark blue color for headings */
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .card {
+                width: 90%;
+                max-width: 400px;
+            }
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #0d134d;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .footer-widget h4 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .footer-widget p, .footer-widget a {
+            color: white;
+            font-size: 1em;
+            line-height: 1.5;
+        }
+
+        .footer-widget a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .footer-widget a:hover {
+            color: #e5b541;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -15px;
+        }
+
+        .footer-links li {
+            flex: 1 1 30%;
+            margin: 0 15px 15px 15px;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: white;
+        }
+
+        .footer-links a:hover {
+            color: #e5b541;
+        }
+
+        .social-media {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-icon {
+            color: gold;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            color: #fff;
+        }
+
+        .copy-right {
+            background-color: #4d5cde;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .copy-right a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .copy-right a:hover {
+            color: #e5b541;
+        }
+    </style>
+
+<style>
+
+    .navbar {
+        background-color: #000;
+        overflow: hidden;
+        /* padding: 10px 0; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #000;
+        padding: 5px 10px;
+    }
+    .navbar .logo {
+        /* display: flex; */
+        /* align-items: center; */
+        padding: 0 20px;
+    }
+    .navbar .logo img {
+        border-radius: 40px;
+        margin-right: 10px;
+    }
+    .navbar .logo span {
+        color: #ffffff;
+        /* font-weight: bold; */
+    }
+    .navbar .logo small {
+        /* display: block; */
+        /* font-size: 12px; */
+        /* color: #f9d500; */
+    }
+    .navbar .nav-links {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .navbar .nav-links li {
+        margin: 0 10px;
+    }
+    .navbar .nav-links a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 15px;
+        transition: color 0.3s;
+    }
+    .navbar .nav-links a:hover {
+        color: #fff;
+    }
+    .navbar .search-box {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        padding: 0 20px;
+    }
+    .navbar .search-box input {
+        padding: 5px 10px;
+        border: 2px solid #f9d500;
+        border-radius: 20px 0 0 20px;
+        outline: none;
+        color: #f9d500;
+        background-color: #000;
+    }
+    .navbar .search-box button {
+        padding: 5px 15px;
+        border: 2px solid #f9d500;
+        border-radius: 0 20px 20px 0;
+        background-color: #000;
+        color: #f9d500;
+        cursor: pointer;
+    }
+    .navbar .search-box button:hover {
+        background-color: #f9d500;
+        color: #000;
+    }
+</style>
+
+</head>
+<body>
+    <!-- Header Section -->
+
+    <!-- <div class="header">
+        <h1>Our Philosophy</h1>
+        <p>Investing in your future with trust and transparency</p>
+    </div> -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="/goldenleap/assets/agoldenleap_logo.png" alt="Logo" width="140" height="50" style="padding-left: 300px;">
+            
+        </div>
+        
+        
+    </div>
+    <div class="navbar" style="background-color: #0d134d;">
+        <ul class="nav-links" style="padding-left: 300px;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="philosophy.html">Our Philosophy</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="#">Vision</a></li>
+            <li><a href="index.html">Invest</a></li>
+            <li><a href="join.html">Join now</a></li>
+            <li><a href="offering.html">Offerings</a></li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <button>SEARCH</button>
+        </div>
+    </div>
+    <!-- Main Content Section -->
+    <section class="main-content">
+        <h2>Our Vision</h2>
+        <p>
+            At GoldenLeap Markets, our vision is to empower traders worldwide with the most innovative tools and insightful analysis, enabling them to achieve financial success and confidence in the global markets. We strive to be the benchmark for performance and quality in the trading industry, fostering a community of informed and successful traders.
+        </p>
+        <p>
+            Our investment philosophy is grounded in thorough research, disciplined processes, and a commitment to ethical practices. We believe in creating long-term value for our clients through a deep understanding of the markets and a proactive approach to managing risk.
+        </p>
+        <p>
+            Join us on a journey towards a secure and prosperous future, where your investments are managed with care and expertise.
+        </p>
+        <a href="#" class="btn">Learn More</a>
+    </section>
+
+    <!-- Selection Criteria Section -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Card Section</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            /* General Reset and Body Styles */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #0d134d;
+                color: white;
+            }
+    
+            /* Section Styles */
+            .section {
+                margin: 40px 0;
+                padding: 20px;
+                border: 1px solid #e5b541;
+                border-radius: 10px;
+                background-color: rgba(255, 255, 255, 0.1);
+                animation: slideIn 2s ease-in-out;
+            }
+    
+            .section h3 {
+                color: #e5b541;
+                margin-bottom: 15px;
+                font-size: 1.5em;
+            }
+    
+            .section .cards {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+            }
+    
+            .section .card {
+                background-color: white;
+                color: black;
+                border-radius: 10px;
+                padding: 20px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 250px;
+                transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+                text-align: center;
+                position: relative;
+            }
+    
+            .section .card:hover {
+                transform: translateY(-10px);
+                background-color: #f9f9f9;
+            }
+    
+            .section .card i {
+                font-size: 2em;
+                color: #e5b541; /* Gold color for icons */
+                margin-bottom: 15px;
+            }
+    
+            .section .card h4 {
+                color: #0d134d; /* Dark blue color for headings */
+                margin-bottom: 10px;
+            }
+    
+            .section .card p {
+                font-size: 0.9em;
+                line-height: 1.5;
+                color: black; /* Black color for text inside the card */
+            }
+    
+            /* Animation Keyframes */
+            @keyframes slideIn {
+                from {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+    
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .section .cards {
+                    flex-direction: column;
+                    align-items: center;
+                }
+    
+                .section .card {
+                    width: 90%;
+                    max-width: 400px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Card Section -->
+        <section class="section">
+            <h3><i class="fas fa-check-circle"></i> Selection Criteria of Funds</h3>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Thorough Market Analysis</h4>
+                    <p>We conduct in-depth market analysis to identify the best investment opportunities that align with our clients' financial goals.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-history"></i>
+                    <h4>Historical Performance Evaluation</h4>
+                    <p>Our team evaluates the historical performance of funds to ensure they meet our standards of consistency and growth.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Sustainable Growth Potential</h4>
+                    <p>We prioritize funds with potential for sustainable growth, balancing risk and reward to protect our clients' investments.</p>
+                </div>
+            </div>
+        </section>
+    </body>
+    </html>
+    
+
+    <!-- Investment Partners Section -->
+    <section class="section">
+        <h3><i class="fas fa-handshake"></i> Investment Partners</h3>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-building"></i>
+                <h4>Global Financial Leaders</h4>
+                <p>We collaborate with top financial institutions to provide a diverse range of investment opportunities.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-briefcase"></i>
+                <h4>Experienced Professionals</h4>
+                <p>Our partners include seasoned market experts who share our commitment to excellence and innovation.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-globe"></i>
+                <h4>International Reach</h4>
+                <p>We ensure our clients benefit from a global perspective with access to worldwide markets and opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Policy Section -->
+    <section class="section">
+        <h3><i class="fas fa-balance-scale"></i> Our Policy</h3>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-lock"></i>
+                <h4>Commitment to Integrity</h4>
+                <p>We uphold the highest standards of integrity, ensuring transparent and ethical practices in all our dealings.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-clipboard-check"></i>
+                <h4>Client-First Approach</h4>
+                <p>Our policies are designed to prioritize the interests of our clients and foster long-term relationships based on trust.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cogs"></i>
+                <h4>Continuous Improvement</h4>
+                <p>We are dedicated to continually enhancing our services and processes to better serve our clients and adapt to market changes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Footer Section</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <style>
+            /* General Reset and Body Styles */
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #0d134d;
+                color: white;
+            }
+    
+            /* Footer Styles */
+            .footer {
+                background-color: #0d134d;
+                color: white;
+                padding: 40px 15px;
+                text-align: center;
+            }
+    
+            .footer-purpose {
+                margin-bottom: 30px;
+                font-size: 0.9em;
+            }
+    
+            .footer-purpose p {
+                margin: 5px 0;
+            }
+    
+            .footer-purpose a {
+                color: #e5b541;
+                text-decoration: none;
+            }
+    
+            .footer-purpose a:hover {
+                color: #fff;
+            }
+    
+            .footer-widget {
+                margin-bottom: 30px;
+            }
+    
+            .footer-widget h4 {
+                color: white;
+                margin-bottom: 20px;
+            }
+    
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+    
+            .footer-links li {
+                margin: 0 15px;
+            }
+    
+            .footer-links a {
+                color: white;
+                text-decoration: none;
+            }
+    
+            .footer-links a:hover {
+                color: #e5b541;
+            }
+    
+            .social-media {
+                margin-top: 20px;
+                display: flex;
+                gap: 15px;
+                justify-content: center;
+            }
+    
+            .social-icon {
+                color: gold;
+                font-size: 1.5em;
+                text-decoration: none;
+            }
+    
+            .social-icon:hover {
+                color: #fff;
+            }
+    
+            .copy-right {
+                background-color: #4d5cde;
+                color: white;
+                padding: 10px 0;
+                text-align: center;
+                margin-top: 20px;
+            }
+    
+            .copy-right a {
+                color: white;
+                text-decoration: none;
+            }
+    
+            .copy-right a:hover {
+                color: #e5b541;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Footer Section -->
+        <footer class="footer">
+            <!-- Purpose Statement -->
+            <div class="footer-purpose">
+                <p>At GoldenLeap, our purpose is to make wealth creation simple and 
+                    accessible by being trustworthy and transparent capital allocators. 
+                    We strive to offer innovative investment solutions and dedicated support to help you achieve your
+                     financial goals with confidence and clarity.</p>
+                <p>Please reach out to us at:</p>
+                <p>Board Line: 999-999-9999</p>
+                <p>Sales Desk: 888-888-8888</p>
+                <p>Email: <a href="mailto:info@agoldenleap.com">info@agoldenleap.com</a></p>
+            </div>
+            
+            <!-- Quick Links Section -->
+            <div class="footer-widget">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Invest With Us</a></li>
+                    <li><a href="#">Corporate Disclosures</a></li>
+                    <li><a href="#">Investing Books</a></li>
+                    <li><a href="#">FAQ'S</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Newsletters</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+    
+            <!-- Follow Us Section -->
+            <div class="footer-widget">
+                <h4>Follow Us</h4>
+                <div class="social-media">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom Section -->
+            <div class="copy-right">
+                <p>&copy; 2024 GoldenLeap Markets. All rights reserved. <a href="#">Privacy Policy</a></p>
+                <p>Support Email: <a href="mailto:support@agoldenleap.com">support@agoldenleap.com</a></p>
+            </div>
+        </footer>
+    </body>
+    </html>
+    
